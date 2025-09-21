@@ -1,0 +1,9 @@
+/**
+ * Grunn sass skrá, sækir aðrar skrár í *réttri* röð.
+ * Sjá skjölun í hverri skrá fyrir sig.
+ */
+@use "styles/config";
+
+// TODO bæta við fleiri skrám eftir þörfum
+
+@use "styles/grid";
