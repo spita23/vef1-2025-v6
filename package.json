@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Vefforritun 1, Verkefni 6",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html 'sidur/*.html' --lazy --no-cache",
     "lint": "stylelint \"styles/**/*.scss\" --fix",
     "build": "parcel build index.html 'sidur/*.html'"
