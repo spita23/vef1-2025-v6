@@ -1,0 +1,70 @@
+/* Utility classes I keep Form and Table here*/
+.content section {
+  margin-bottom: var(--spacing);
+}
+
+table {
+  margin-bottom: var(--spacing);
+  border-spacing: 0;
+  width: 100%;
+}
+
+table th,
+table td {
+  padding: calc(var(--spacing) / 2);
+  text-align: left;
+}
+
+table tbody tr:nth-child(2n + 1) {
+  background-color: var(--color-accent);
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing);
+}
+
+fieldset {
+  width: 100%;
+  max-width: 450px;
+  border: 0;
+}
+
+fieldset legend {
+  margin-bottom: var(--spacing);
+  font-size: 1.5rem;
+}
+
+fieldset div {
+  width: 100%;
+  margin-bottom: var(--spacing);
+}
+
+fieldset div label {
+  display: block;
+}
+
+fieldset div span {
+  display: block;
+  margin-top: calc(var(--spacing) / 2);
+}
+
+fieldset input,
+fieldset select,
+fieldset textarea {
+  padding: calc(var(--spacing) / 2);
+  width: 100%;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+}
+
+fieldset input[type="checkbox"] {
+  display: inline-block;
+  margin-right: calc(var(--spacing) / 2);
+  width: auto;
+}
+
+.submit {
+  grid-column: 1 / -1;
+}

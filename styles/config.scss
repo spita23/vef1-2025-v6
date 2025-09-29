@@ -8,4 +8,36 @@ $grid: false;
 
 :root {
   // TODO setja inn stillingar úr verkefni 5
+  --font-size-base: 16px;
+  --font-size-headings: 1.5rem;
+  --spacing: 1rem;
+  --max-width: 1100px;
+  --height-nav: 4rem;
+  --columns: 12;
+  --gutter: 30px;
+  --offset: 20px;
+  --width-offset: calc(100% - (2 * var(--offset)));
+  --vertical-space-small: calc(var(--gutter) * 1);
+  --vertical-space-large: calc(var(--gutter) * 1.5);
+  --vertical-space: var(--vertical-space-small);
+  --border-nav: 2px solid var(--color-background-secondary);
+  --border-radius-regular: 5px;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #000000;
+  --color-accent: #ff9999;
+  --color-protection: rgba(0, 0, 0, 0.35);
+  --font-base-size: 1rem;
+  --font-family-base: "Gelasio", "Georgia", serif;
+  --font-family-heading: "Atkinson Hyperlegible", "Courier New", monospace;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background-primary: #000000;
+    --color-background-secondary: #ffffff;
+    --color-accent: #660000;
+    --color-protection: rgba(255, 255, 255, 0.5);
+    --border-nav: 2px solid var(--color-background-secondary);
+  }
 }

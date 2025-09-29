@@ -1,0 +1,16 @@
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: calc(var(--spacing) * 0.5) var(--spacing);
+  border: 0;
+  border-radius: var(--border-radius-regular);
+  color: var(--color-background-primary);
+  background-color: var(--color-background-secondary);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.submit .button {
+  background-color: var(--color-accent);
+  color: var(--color-background-secondary);
+}

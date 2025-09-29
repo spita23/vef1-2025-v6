@@ -1,0 +1,25 @@
+{
+  "name": "vef1-2025-v6",
+  "version": "1.0.0",
+  "description": "Vefforritun 1, Verkefni 6",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html 'sidur/*.html' --lazy --no-cache",
+    "build": "parcel build index.html 'sidur/*.html'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spita23/vef1-2025-v6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spita23/vef1-2025-v6/issues"
+  },
+  "homepage": "https://github.com/spita23/vef1-2025-v6#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0",
+    "sass": "^1.80.4"
+  }
+}

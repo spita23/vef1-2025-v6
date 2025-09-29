@@ -1,0 +1,54 @@
+/* Header styles */
+header {
+  grid-column: full-start / full-end;
+  padding: var(--spacing) calc(var(--spacing) * 1.5);
+  text-align: center;
+}
+
+header h1 {
+  font-size: calc(var(--font-size-headings) * 2);
+  text-transform: uppercase;
+}
+
+.intro {
+  display: flex;
+  position: relative;
+  margin-bottom: calc(var(--spacing) * 2);
+  min-height: calc(100vh - var(--height-nav));
+  color: var(--color-background-primary);
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../myndir/background.jpg");
+}
+
+.intro .protection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--color-protection);
+}
+
+.intro .content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+
+.intro .content h1 {
+  margin-top: calc(var(--spacing) * -4);
+}
+
+.intro .content h1,
+.intro .content h2 {
+  margin-bottom: calc(var(--spacing) * 4);
+}

@@ -1,0 +1,57 @@
+/* Global styles */
+body {
+  background-color: var(--color-background-primary);
+  color: var(--color-background-secondary);
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/AtkinsonHyperlegibleMono-VariableFont_wght.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Gelasio";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Gelasio-VariableFont_wght.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: "Gelasio";
+  font-weight: 700;
+  src: url("../fonts/Gelasio-VariableFont_wght.ttf") format("woff2");
+}
+
+html,
+input,
+select,
+button {
+  font-family: var(--font-family-base);
+}
+
+h1,
+h2,
+h3,
+legend {
+  font-family: var(--font-family-heading);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+input,
+button,
+select {
+  font-size: inherit;
+}
