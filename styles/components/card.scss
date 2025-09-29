@@ -11,60 +11,61 @@
   gap: var(--spacing);
 }
 
-.card .card__header {
+.card .card-header {
   width: 100%;
 }
 
-.card .card__content {
+.card .card-content {
   display: flex;
-  gap: var(--spacing);
   flex-direction: column;
+  gap: var(--spacing);
 }
 
-.card .card__text {
+.card .card-text {
   flex: 1;
 }
 
-.card .card__image {
+.card .card-image {
   flex-basis: 40%;
   width: 100%;
 }
 
-.card .card__kicker {
+.card .card-kicker {
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.card .card__title {
+.card .card-title {
   margin-bottom: 1rem;
   font-size: 2rem;
 }
 
-.card .card__image img {
+.card .card-image img {
   display: block;
-  border-top-left-radius: var(--border-radius-regular);
-  border-top-right-radius: var(--border-radius-regular);
   width: 100%;
   height: 300px;
   object-fit: cover;
   object-position: 50% 50%;
+  border-top-left-radius: var(--border-radius-regular);
+  border-top-right-radius: var(--border-radius-regular);
 }
 
-.card:nth-child(2n) .card__image {
+.card:nth-child(2n) .card-image {
   order: -1;
 }
 
-@media (max-width: 699px) {
+@media (width <= 699px) {
   .card {
     grid-template-columns: 1fr;
   }
-  .card__image {
+
+  .card-image {
     order: 0 !important;
   }
 }
 
-@media (min-width: 700px) {
+@media (width >= 700px) {
   .cards {
     gap: calc(var(--spacing) * 2);
   }

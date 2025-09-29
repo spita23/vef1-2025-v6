@@ -2,15 +2,15 @@
 .button {
   display: inline-block;
   padding: calc(var(--spacing) * 0.5) var(--spacing);
+  font-size: 1rem;
+  color: var(--color-background-primary);
+  text-decoration: none;
+  background-color: var(--color-background-secondary);
   border: 0;
   border-radius: var(--border-radius-regular);
-  color: var(--color-background-primary);
-  background-color: var(--color-background-secondary);
-  font-size: 1rem;
-  text-decoration: none;
 }
 
 .submit .button {
-  background-color: var(--color-accent);
   color: var(--color-background-secondary);
+  background-color: var(--color-accent);
 }

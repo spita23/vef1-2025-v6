@@ -1,12 +1,12 @@
-/* Utility classes I keep Form and Table here*/
+/* Utility classes I keep Form and Table here */
 .content section {
   margin-bottom: var(--spacing);
 }
 
 table {
+  width: 100%;
   margin-bottom: var(--spacing);
   border-spacing: 0;
-  width: 100%;
 }
 
 table th,
@@ -53,16 +53,16 @@ fieldset div span {
 fieldset input,
 fieldset select,
 fieldset textarea {
-  padding: calc(var(--spacing) / 2);
   width: 100%;
-  border: 1px solid #000000;
-  background-color: #ffffff;
+  padding: calc(var(--spacing) / 2);
+  background-color: #fff;
+  border: 1px solid #000;
 }
 
 fieldset input[type="checkbox"] {
   display: inline-block;
-  margin-right: calc(var(--spacing) / 2);
   width: auto;
+  margin-right: calc(var(--spacing) / 2);
 }
 
 .submit {

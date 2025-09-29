@@ -5,30 +5,31 @@ header {
   text-align: center;
 }
 
+header:not(.intro) {
+  padding-top: calc(var(--spacing) * 4); /* So nav doesnt go over page title */
+}
+
 header h1 {
   font-size: calc(var(--font-size-headings) * 2);
   text-transform: uppercase;
 }
 
 .intro {
-  display: flex;
   position: relative;
-  margin-bottom: calc(var(--spacing) * 2);
+  display: flex;
   min-height: calc(100vh - var(--height-nav));
+  margin-bottom: calc(var(--spacing) * 2);
   color: var(--color-background-primary);
-  background-position: 50% 50%;
-  background-attachment: fixed;
+  background-image: url("myndir/background.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
   background-size: cover;
-  background-image: url("../myndir/background.jpg");
 }
 
 .intro .protection {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 1;
   background-color: var(--color-protection);
 }
@@ -38,9 +39,9 @@ header h1 {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  margin: auto;
   align-items: center;
   justify-content: center;
+  margin: auto;
   font-size: 2em;
 }
 

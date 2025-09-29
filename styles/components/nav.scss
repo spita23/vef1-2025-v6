@@ -13,18 +13,18 @@ nav {
 
 nav ul {
   display: flex;
+  gap: calc(var(--spacing) * 2);
+  justify-content: center;
   width: 100%;
   padding: var(--spacing);
   overflow: auto;
-  gap: calc(var(--spacing) * 2);
-  justify-content: center;
   list-style: none;
 }
 
 nav ul li {
-  white-space: nowrap;
-  font-size: var(--font-size-headings);
   font-family: var(--font-family-heading);
+  font-size: var(--font-size-headings);
+  white-space: nowrap;
 }
 
 nav a {
@@ -41,13 +41,15 @@ nav strong {
   text-decoration: underline;
 }
 
-@media (max-width: 780px) {
+@media (width <= 780px) {
   nav .hide-in-mobile {
     display: none;
   }
+
   nav ul {
     gap: var(--spacing);
   }
+
   nav ul li {
     font-size: var(--font-base-size);
   }

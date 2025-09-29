@@ -5,6 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html 'sidur/*.html' --lazy --no-cache",
+    "lint": "stylelint \"styles/**/*.scss\" --fix",
     "build": "parcel build index.html 'sidur/*.html'"
   },
   "repository": {
@@ -19,7 +20,12 @@
   },
   "homepage": "https://github.com/spita23/vef1-2025-v6#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.0",
     "parcel": "^2.16.0",
-    "sass": "^1.80.4"
+    "sass": "^1.80.4",
+    "stylelint": "^16.24.0",
+    "stylelint-config-recess-order": "^7.3.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-standard-scss": "^16.0.0"
   }
 }

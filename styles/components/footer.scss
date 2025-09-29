@@ -8,27 +8,28 @@ footer {
 footer .content {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--spacing);
   justify-content: space-between;
   max-width: var(--max-width);
   margin: 0 auto;
-  gap: var(--spacing);
 }
 
 .footer-section {
   flex: 1;
   min-width: 250px;
-  text-align: center;
   padding: var(--spacing);
+  text-align: center;
 }
 
-@media (max-width: 549px) {
+@media (width <= 549px) {
   footer .content {
     flex-direction: column;
     gap: 0;
   }
+
   .footer-section {
-    min-width: auto;
     width: 100%;
+    min-width: auto;
     margin-bottom: var(--spacing);
   }
 }

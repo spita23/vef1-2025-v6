@@ -22,10 +22,10 @@ $grid: false;
   --vertical-space: var(--vertical-space-small);
   --border-nav: 2px solid var(--color-background-secondary);
   --border-radius-regular: 5px;
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #000000;
-  --color-accent: #ff9999;
-  --color-protection: rgba(0, 0, 0, 0.35);
+  --color-background-primary: #fff;
+  --color-background-secondary: #000;
+  --color-accent: #f99;
+  --color-protection: rgb(0 0 0 / 35%);
   --font-base-size: 1rem;
   --font-family-base: "Gelasio", "Georgia", serif;
   --font-family-heading: "Atkinson Hyperlegible", "Courier New", monospace;
@@ -34,10 +34,10 @@ $grid: false;
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background-primary: #000000;
-    --color-background-secondary: #ffffff;
-    --color-accent: #660000;
-    --color-protection: rgba(255, 255, 255, 0.5);
+    --color-background-primary: #000;
+    --color-background-secondary: #fff;
+    --color-accent: #600;
+    --color-protection: rgb(255 255 255 / 50%);
     --border-nav: 2px solid var(--color-background-secondary);
   }
 }
