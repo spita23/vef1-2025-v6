@@ -1,0 +1,474 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* hjálpar class sem felur sjónrænt en skjálesarar lesa */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/** Stillingar **/
+
+:root {
+  --font-size-base: 16px;
+  --font-size-headings: 1.5rem;
+
+  /* Grunn bilið okkar er 1rem == 16px */
+  --spacing: 1rem;
+
+  /* Hámarks og lágmarks breidd á efni */
+  /* TODO stilling */
+
+  /* Hæð á nav */
+  --height-nav: 4rem;
+
+  /* Border breiddir */
+  /* TODO fleiri stillingar */
+
+  /* Litir */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #000000;
+  --color-accent: #ff9999;
+  --color-background-form: var(--color-white);
+  --color-border-with-background: var(--color-purple-dark);
+
+  /* Letur stillingar */
+  --font-base-size: 1rem;
+  /* TODO fleiri stillingar */
+}
+
+/** Letur og stærðir **/
+
+html {
+  font-size: var(--font-size-base);
+  /* TODO setja stærð út frá custom property */
+}
+
+/* Leturgerðir sem við sækjum úr fonts/ möppu */
+@font-face {
+  font-family: 'Atkinson Hyperlegible Mono';
+  src: url('fonts/AtkinsonHyperlegibleMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gelasio';
+  src: url('fonts/Gelasio-VariableFont.woff2') format('woff2-variations');
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+
+/*** Allt meginmál notar Gelasio ***/
+html,
+input,
+select,
+button {
+  font-family: "Gelasio", "Georgia", serif;
+}
+
+/*** Allar fyrirsagnir nota Atkinson Hyperlegible regular ***/
+h1,
+h2,
+h3,
+legend {
+  font-family: 'Atkinson Hyperlegible Mono', monospace;
+  font-weight: 400;
+}
+
+/** Lætur myndir aldrei taka meira pláss en foreldri skilgreinir **/
+img {
+  max-width: 100%;
+}
+
+/** Litur á hlekkjum erfist frá foreldri **/
+a {
+  color: inherit;
+}
+
+/** Stærð á letri erfist frá foreldri í form element **/
+input,
+button,
+select {
+  font-size: inherit;
+}
+
+/**
+ * Eftirfarandi setur upp grunn umbrot (layout) síðu með flexbox.
+ * Við förum yfir flexbox í viku 4 + verkefni 4 en þangað til er hægt að nota þetta
+ * sem grunn og án breytinga.
+ * Athugið að til þess að þetta virki þar að setja <div class="wrapper"> utan um allt efni 
+ * innan <body> sem á að fylgja þessu (<nav> ætti að vera undanskilið).
+ */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  /* pláss fyrir nav, það er nákvæmlega svona hátt */
+  margin-top: 4rem;
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+}
+
+.wrapper main {
+  flex: 1;
+}
+
+/**
+ * Nav er fast efst og fylgir þegar við skrollum síðu.
+ */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--height-nav);
+  border-bottom: 1px solid var(--color-background-secondary);
+  background-color: var(--color-background-primary);
+  width: 100%;
+  padding: 0 var(--spacing);
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* TODO fleiri selectorar fyrir valmynd */
+nav ul li {
+  font-size: 1.5rem;
+  margin-left: var(--spacing);
+}
+
+nav strong {
+  font-family: 'Atkinson Hyperlegible Mono', monospace;
+  line-height: var(--height-nav);
+  text-decoration: underline; 
+}
+
+nav a {
+  font-family: 'Atkinson Hyperlegible Mono', monospace;
+  line-height: var(--height-nav);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  text-decoration: underline; 
+}
+
+/** Haus á síðum **/
+
+header {
+  text-align: center;
+  margin-bottom: var(--spacing);
+}
+
+/* TODO fleiri selectorar fyrir hausa */
+header h1 {
+  font-size: 3rem; 
+}
+
+/** Meginmál og efni forsíðu **/
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width-content);
+}
+
+
+/** Forsíða inngangsmynd **/
+
+.intro {
+  position: relative;
+  background-image: url('myndir/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 20rem var(--spacing) var(--spacing);
+}
+
+/* TODO fleiri selectorar fyrir forsíðu inngangsmyndar */
+.intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.intro h1,
+.intro section {
+  position: relative;
+  z-index: 2;
+  color: var(--color-background-primary);
+  text-align: center;
+}
+
+.intro h1 {
+  margin-bottom: var(--spacing); 
+}
+/**
+ * Cards á forsíðu.
+ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  margin-bottom: var(--spacing);
+  position: relative;
+}
+
+/* TODO fleiri selectorar fyrir cards */
+.card .card-header {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+}
+
+.card .card-content {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing);
+  position: relative;
+  min-height: 200px;
+}
+
+.card:nth-child(1) .card-content {
+  flex-direction: row; 
+}
+
+.card:nth-child(1) .card-content .card-text-container{
+  order: 1;
+  position: relative;
+}
+
+.card:nth-child(1) .card-content img {
+  order: 2;
+  max-width: 20%;
+}
+
+.card:nth-child(2) .card-content {
+  flex-direction: row;
+}
+
+.card:nth-child(2) .card-content .card-text-container{
+  order: 2;
+  position: relative;
+}
+
+.card:nth-child(2) .card-content img {
+  order: 1; 
+  max-width: 20%; 
+}
+
+.card .card-content img {
+  flex: 1;
+  max-width: 20%;
+  object-fit: cover;
+}
+
+.card .card-text-container {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card .kicker {
+  display: flex;
+  margin-bottom: 0.25rem;
+}
+
+.card .card-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+}
+
+.card .card-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 0;
+}
+
+.card .card-footer a {
+  border: 2px solid var(--color-background-secondary);
+  background-color: var(--color-background-secondary);
+  color: var(--color-background-primary);
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+}
+/** Efnissíða **/
+body.um main section {
+  margin-bottom: var(--spacing);
+}
+
+body.um main h2 {
+  margin-bottom: 0;
+}
+
+
+/** Töflur **/
+body.syningar main section {
+  margin-bottom: var(--spacing);
+}
+
+body.syningar main h2 {
+  margin-bottom: 0;
+}
+
+body.syningar table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing);
+}
+
+body.syningar th {
+  font-weight: 700;
+  text-align: left;
+  padding: 0.5rem;
+  background-color: var(--color-background-primary);
+}
+
+body.syningar td {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+body.syningar tr:nth-child(odd) {
+  background-color: var(--color-accent);
+}
+
+body.syningar tr:nth-child(even) {
+  background-color: var(--color-background-primary);
+}
+
+/** Form **/
+body.skraning main {
+  padding-top: var(--spacing);
+  display: flex;
+  flex-direction: column;
+}
+
+body.skraning .fieldset-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing);
+}
+
+body.skraning .fieldset-container fieldset {
+  flex: 1;
+  margin-right: var(--spacing);
+}
+
+body.skraning fieldset {
+  margin-bottom: var(--spacing);
+  border: none;
+}
+
+body.skraning legend {
+  font-size: var(--font-size-headings);
+}
+
+body.skraning input[type="number"],
+body.skraning input[type="email"],
+body.skraning input[type="tel"],
+body.skraning select,
+body.skraning textarea {
+  max-width: 450px;
+  padding: 0.5rem;
+  background-color: var(--color-background-form);
+  margin-bottom: var(--spacing);
+  width: 100%;
+}
+
+body.skraning textarea {
+  height: 100px;
+}
+
+body.skraning button {
+  background-color: var(--color-accent);
+  color: var(--color-background-secondary);
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+body.skraning button:hover {
+  background-color: #cc6666;
+}
+
+body.skraning label {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+body.skraning input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/** Fótur **/
+footer {
+  text-align: center;
+  background-color: var(--color-accent);
+  padding: var(--spacing);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 0 var(--spacing);
+}
+
+.footer-section h2 {
+  margin-bottom: var(--spacing);
+}
+
+.footer-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  margin-bottom: 0.5rem;
+}
